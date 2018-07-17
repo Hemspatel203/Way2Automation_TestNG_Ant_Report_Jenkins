@@ -4,8 +4,6 @@ import java.util.Iterator;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
-import org.bouncycastle.asn1.crmf.SinglePubInfo;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -26,7 +24,7 @@ public class RegisterPage {
 	@FindBy(xpath = "(//form[@id='load_form']/h3)[2]")
 	static WebElement registerForm;
 	
-	@FindBy(xpath = "(.//*[@id='load_form'])[2]")
+	@FindBy(xpath = "(.//*[@id='load_form'])[1]")
 	static WebElement loginForm;
 	
 	@FindBy(name="name")
@@ -86,13 +84,10 @@ public class RegisterPage {
 
 	public void closeBrowser() {
 
-		driver.close();
+		driver.quit();
 	}
 
-	public void closeNewWindow() {
-		newWindow();
-		driver.close();
-	}
+	
 
 	public void openSite() throws InterruptedException {
 
@@ -193,6 +188,6 @@ public class RegisterPage {
 	public void clickSiginInSubmitButton() throws InterruptedException {
 		newWindow();
 		signInButton.click();
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 	}
 }

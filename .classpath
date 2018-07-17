@@ -11,5 +11,7 @@
 	<classpathentry kind="lib" path="C:/SeleniumJars/wetransfer-b85640/poi-ooxml-schemas-3.6-20091214.jar"/>
 	<classpathentry kind="lib" path="C:/SeleniumJars/wetransfer-b85640/xmlbeans-2.3.0.jar"/>
 	<classpathentry kind="lib" path="C:/SeleniumJars/wetransfer-b85640/log4j-1.2.14.jar"/>
+	<classpathentry kind="lib" path="C:/SeleniumJars/saxon-8.7.jar"/>
+	<classpathentry kind="lib" path="C:/SeleniumJars/SaxonLiaison.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

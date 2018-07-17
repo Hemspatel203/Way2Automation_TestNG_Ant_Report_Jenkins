@@ -49,7 +49,7 @@
               <ul>
                 <li>
                   <a href="#" class="navigator-link " panel-name="test-xml-Default_suite">
-                    <span>C:\Users\Hems\AppData\Local\Temp\testng-eclipse-110670500\testng-customsuite.xml</span>
+                    <span>C:\Users\Hems\AppData\Local\Temp\testng-eclipse-1825364117\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -116,7 +116,7 @@
                     <div class="method-list-content passed suite-Default_suite">
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="test.RegisterTest" hash-for-method="checlOpenRegistrationBoxNewWindow">checlOpenRegistrationBoxNewWindow</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="test.RegisterTest" hash-for-method="checkOpenRegistrationBoxNewWindow">checkOpenRegistrationBoxNewWindow</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -147,11 +147,14 @@
                   <a name="enterLogin">
                   </a> <!-- enterLogin -->
                   <span class="method-name">enterLogin</span>
-                  <div class="stack-trace">java.lang.AssertionError: Login successfull expected [false] but found [true]
+                  <div class="stack-trace">java.lang.AssertionError: expected [true] but found [false]
 	at org.testng.Assert.fail(Assert.java:96)
 	at org.testng.Assert.failNotEquals(Assert.java:776)
-	at org.testng.Assert.assertFalse(Assert.java:65)
-	at test.RegisterTest.enterLogin(RegisterTest.java:63)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:137)
+	at org.testng.Assert.assertEquals(Assert.java:118)
+	at org.testng.Assert.assertEquals(Assert.java:568)
+	at org.testng.Assert.assertEquals(Assert.java:578)
+	at test.RegisterTest.enterLogin(RegisterTest.java:61)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -191,9 +194,9 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="checlOpenRegistrationBoxNewWindow">
-                  </a> <!-- checlOpenRegistrationBoxNewWindow -->
-                  <span class="method-name">checlOpenRegistrationBoxNewWindow</span>
+                  <a name="checkOpenRegistrationBoxNewWindow">
+                  </a> <!-- checkOpenRegistrationBoxNewWindow -->
+                  <span class="method-name">checkOpenRegistrationBoxNewWindow</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
@@ -208,7 +211,7 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\Hems\AppData\Local\Temp\testng-eclipse-110670500\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\Hems\AppData\Local\Temp\testng-eclipse-1825364117\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -259,22 +262,22 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(3);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'checlOpenRegistrationBoxNewWindow')
+data.setCell(0, 1, 'checkOpenRegistrationBoxNewWindow')
 data.setCell(0, 2, 'test.RegisterTest')
-data.setCell(0, 3, 14280);
+data.setCell(0, 3, 14753);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'enterExistingUserRegistrationData')
 data.setCell(1, 2, 'test.RegisterTest')
-data.setCell(1, 3, 12297);
+data.setCell(1, 3, 10322);
 data.setCell(2, 0, 2)
 data.setCell(2, 1, 'enterLogin')
 data.setCell(2, 2, 'test.RegisterTest')
-data.setCell(2, 3, 7494);
+data.setCell(2, 3, 10094);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 34 seconds</span>
+              <span class="suite-total-time">Total running time: 35 seconds</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -306,19 +309,23 @@ return data;
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
-                <span class="method-name">checlOpenRegistrationBoxNewWindow</span>
-                <span class="method-start">30293 ms</span>
+                <span class="method-name">checkOpenRegistrationBoxNewWindow</span>
+                <span class="method-start">26347 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">enterExistingUserRegistrationData</span>
-                <span class="method-start">44577 ms</span>
+                <span class="method-start">41105 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">enterLogin</span>
-                <span class="method-start">56877 ms</span>
+                <span class="method-start">51432 ms</span>
               </div> <!-- test-method -->
+              <div class="configuration-class after">
+                <span class="method-name">afterClass</span>
+                <span class="method-start">61531 ms</span>
+              </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->

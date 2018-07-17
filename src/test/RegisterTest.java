@@ -1,10 +1,8 @@
 package test;
 
-import org.junit.AfterClass;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import page.RegisterPage;
@@ -22,12 +20,11 @@ public class RegisterTest {
 	@AfterClass
 	public void afterClass() {
 		rp.closeBrowser();
-		rp.closeNewWindow();
 	}
 	
 
-	@Test
-	public void checlOpenRegistrationBoxNewWindow() throws InterruptedException {
+	@Test(priority=1)
+	public void checkOpenRegistrationBoxNewWindow() throws InterruptedException {
 		rp.openRegisterPage();
 		//System.out.println(rp.checkNewWindowTitle());
 		//Assert.assertEquals(rp.checkRegisterBoxText(),"REGISTRATION FORM");
@@ -38,7 +35,7 @@ public class RegisterTest {
 		//System.out.println(rp.registerBox());
 	}
 	
-	@Test
+	@Test(priority=2, dependsOnMethods= {"checkOpenRegistrationBoxNewWindow"})
 	public void enterExistingUserRegistrationData() throws InterruptedException {
 		rp.enterName();
 		rp.enterPhone();
@@ -54,13 +51,14 @@ public class RegisterTest {
 		}
 		
 	}
-	@Test
+	@Test(priority=3, dependsOnMethods= {"enterExistingUserRegistrationData"})
 	public void enterLogin() throws InterruptedException {
 		rp.getLoginForm();
 		rp.enterSignInUsername();
 		rp.enterSignInPassword();
 		rp.clickSiginInSubmitButton();
-		Assert.assertTrue(rp.checkPresenceofLoginBox(),"Login successfull");
+		
+		Assert.assertEquals(rp.checkPresenceofLoginBox(),true);
 	}
 	
 	
