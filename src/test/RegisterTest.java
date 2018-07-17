@@ -58,7 +58,7 @@ public class RegisterTest {
 		rp.enterSignInPassword();
 		rp.clickSiginInSubmitButton();
 		
-		Assert.assertEquals(rp.checkPresenceofLoginBox(),true);
+		Assert.assertEquals(rp.checkPresenceofLoginBox(),false);
 	}
 	
 	

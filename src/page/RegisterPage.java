@@ -23,52 +23,51 @@ public class RegisterPage {
 
 	@FindBy(xpath = "(//form[@id='load_form']/h3)[2]")
 	static WebElement registerForm;
-	
+
 	@FindBy(xpath = "(.//*[@id='load_form'])[1]")
 	static WebElement loginForm;
-	
-	@FindBy(name="name")
+
+	@FindBy(name = "name")
 	static WebElement name;
-	
-	@FindBy(name="phone")
+
+	@FindBy(name = "phone")
 	static WebElement phone;
-	
-	@FindBy(name="email")
+
+	@FindBy(name = "email")
 	static WebElement email;
-	
-	@FindBy(name="country")
+
+	@FindBy(name = "country")
 	static WebElement country;
-	
-	@FindBy(name="city")
+
+	@FindBy(name = "city")
 	static WebElement city;
-	
-	@FindBy(xpath=".//*[@id='load_form']/fieldset[6]/input")
+
+	@FindBy(xpath = ".//*[@id='load_form']/fieldset[6]/input")
 	static WebElement username;
-	
-	@FindBy(xpath=".//*[@id='load_form']/fieldset[7]/input")
+
+	@FindBy(xpath = ".//*[@id='load_form']/fieldset[7]/input")
 	static WebElement password;
-	
-	@FindBy(xpath="(.//*[@id='load_form'])[2]/div/div[2]/input")
+
+	@FindBy(xpath = "(.//*[@id='load_form'])[2]/div/div[2]/input")
 	static WebElement submitButton;
-	
-	@FindBy(xpath=".//*[@id='alert']")
+
+	@FindBy(xpath = ".//*[@id='alert']")
 	static WebElement alert;
-	
-	@FindBy(xpath="(.//*[@id='load_form'])[2]/div/div[1]/p/a")
+
+	@FindBy(xpath = "(.//*[@id='load_form'])[2]/div/div[1]/p/a")
 	static WebElement signInButton;
-	
-	@FindBy(xpath="(.//*[@id='load_form'])[2]/fieldset[1]/input")
+
+	@FindBy(xpath = "(.//*[@id='load_form'])[2]/fieldset[1]/input")
 	static WebElement signInUserName;
-	
-	@FindBy(xpath="(.//*[@id='load_form'])[2]/fieldset[2]/input")
+
+	@FindBy(xpath = "(.//*[@id='load_form'])[2]/fieldset[2]/input")
 	static WebElement signInPassword;
 
-	@FindBy(xpath="(.//*[@id='load_form'])[2]/div/div[2]/input")
+	@FindBy(xpath = "(.//*[@id='load_form'])[2]/div/div[2]/input")
 	static WebElement signInSubmit;
-	
-	
+
 	static String error = "Username or Password already exists";
-	
+
 	public void openBrowser() {
 
 		if (ReadXlsData.browser.equals("firefox")) {
@@ -86,8 +85,6 @@ public class RegisterPage {
 
 		driver.quit();
 	}
-
-	
 
 	public void openSite() throws InterruptedException {
 
@@ -107,84 +104,88 @@ public class RegisterPage {
 		Iterator<String> iter = windows.iterator();
 		String mainwindow = iter.next();
 		String childWindow = iter.next();
-		
+
 		driver.switchTo().window(childWindow);
 	}
 
-	public boolean checkPresenceofRegisterBox()
-	{
+	public boolean checkPresenceofRegisterBox() {
 		newWindow();
 		return registerForm.isDisplayed();
 	}
-	
-	public boolean checkPresenceofLoginBox()
-	{
+
+	public boolean checkPresenceofLoginBox() {
 		newWindow();
 		return loginForm.isDisplayed();
 	}
 
-//	public String checkRegisterBoxText() {
-//		newWindow();
-//		return registerForm.getText();
-//	}
-	
+	// public String checkRegisterBoxText() {
+	// newWindow();
+	// return registerForm.getText();
+	// }
+
 	public void enterName() {
 		newWindow();
-		
+
 		name.sendKeys(ReadXlsData.name);
 	}
-	
+
 	public void enterPhone() {
 		newWindow();
 		phone.sendKeys(ReadXlsData.phone);
 	}
+
 	public void enterEmail() {
 		newWindow();
 		email.sendKeys(ReadXlsData.email);
 	}
+
 	public void enterCountry() {
 		newWindow();
 		Select selectCountry = new Select(country);
 		selectCountry.selectByValue("Canada");
 	}
+
 	public void enterCity() {
 		newWindow();
 		city.sendKeys(ReadXlsData.city);
 	}
+
 	public void enterUserName() {
 		newWindow();
 		username.sendKeys(ReadXlsData.uname);
 	}
+
 	public void enterPassword() {
 		newWindow();
 		password.sendKeys(ReadXlsData.pass);
 	}
-	
+
 	public void enterSubmit() throws InterruptedException {
 		newWindow();
 		submitButton.click();
 		Thread.sleep(2000);
 	}
-	
+
 	public String getAlertMessage() {
 		newWindow();
 		return alert.getText();
 	}
-	
+
 	public void getLoginForm() {
 		newWindow();
 		signInButton.click();
 	}
-	
+
 	public void enterSignInUsername() {
 		newWindow();
 		signInUserName.sendKeys(ReadXlsData.uname);
 	}
-	
+
 	public void enterSignInPassword() {
 		newWindow();
 		signInPassword.sendKeys(ReadXlsData.pass);
 	}
+
 	public void clickSiginInSubmitButton() throws InterruptedException {
 		newWindow();
 		signInButton.click();

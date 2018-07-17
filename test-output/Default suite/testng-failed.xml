@@ -5,8 +5,11 @@
     <classes>
       <class name="test.RegisterTest">
         <methods>
+          <include name="checkOpenRegistrationBoxNewWindow"/>
           <include name="beforeClass"/>
           <include name="enterLogin"/>
+          <include name="enterExistingUserRegistrationData"/>
+          <include name="afterClass"/>
         </methods>
       </class> <!-- test.RegisterTest -->
     </classes>
